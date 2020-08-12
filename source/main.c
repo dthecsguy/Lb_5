@@ -1,4 +1,4 @@
-/*	Author: lab
+/*	Author: Demarcus Sales
  *  Partner(s) Name: 
  *	Lab Section:
  *	Assignment: Lab #  Exercise #
@@ -14,10 +14,12 @@
 
 int main(void) {
     /* Insert DDR and PORT initializations */
-
+    DDRA = 0x00;    PORTA = 0xFF;
+    DDRB = 0x00;    PORTB = 0x00;
+    
     /* Insert your solution below */
     while (1) {
-
+        PORTB = PINA;
     }
     return 1;
 }
