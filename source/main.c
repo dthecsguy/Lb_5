@@ -12,6 +12,10 @@
 #include "simAVRHeader.h"
 #endif
 
+#define inputs (PINA & 0x0F)
+#define low_ind 0x40
+#define B PINB
+
 int main(void) {
     /* Insert DDR and PORT initializations */
     DDRA = 0x00; PORTA = 0xFF;
