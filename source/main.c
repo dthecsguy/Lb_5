@@ -12,13 +12,25 @@
 #include "simAVRHeader.h"
 #endif
 
+#define button (~PINA & 0x01)
+
 int main(void) {
     /* Insert DDR and PORT initializations */
+    DDRA = 0x00;    PORTA = 0xFF;
     DDRB = 0xFF;    PORTB = 0x00;
     
     /* Insert your solution below */
     while (1) {
-        PORTB = 0x0F;
+        unsigned char outtie = 0;
+        
+        if (button){
+            outtie = (outtie & 0xFC) | 0x01;
+        }
+        else {
+            outtie = (outtie & 0xFC) | 0x02;
+        }
+        
+        PORTB = outtie;
     }
     return 1;
 }
