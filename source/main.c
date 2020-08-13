@@ -12,7 +12,7 @@
 #include "simAVRHeader.h"
 #endif
 
-#define inputs (PINA & 0x0F)
+#define inputs (~PINA & 0x0F)
 #define low_ind 0x40
 #define B PINB
 
