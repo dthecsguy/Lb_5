@@ -31,7 +31,7 @@ int main(void) {
             outtie = 0x00;
         }
         
-        PORTB = outtie;
+        PORTC = outtie;
     }
     return 1;
 }
