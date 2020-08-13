@@ -17,10 +17,12 @@ int main(void) {
     DDRA = 0x00;    PORTA = 0xFF;
     DDRB = 0xFF;    PORTB = 0x00;
     
+    unsigned char outtie = 0;
+    
     /* Insert your solution below */
     while (1) {
-        unsigned char outtie = 0;
-        unsigned char button (~PINA & 0x01);
+        
+        unsigned char button = (~PINA & 0x01);
         
         if (button){
             outtie = (outtie & 0xFC) | 0x01;
