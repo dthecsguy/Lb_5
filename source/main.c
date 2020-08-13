@@ -15,7 +15,7 @@
 int main(void) {
     /* Insert DDR and PORT initializations */
     DDRA = 0x00;    PORTA = 0xFF;
-    DDRB = 0xFF;    PORTB = 0x00;
+    DDRC = 0xFF;    PORTC = 0x00;
     
     unsigned char outtie = 0;
     
@@ -25,10 +25,10 @@ int main(void) {
         unsigned char button = (~PINA & 0x01);
         
         if (button){
-            outtie = (outtie & 0xFC) | 0x01;
+            outtie = 0xFF;
         }
         else {
-            outtie = (outtie & 0xFC) | 0x02;
+            outtie = 0x00;
         }
         
         PORTB = outtie;
